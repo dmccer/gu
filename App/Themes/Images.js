@@ -19,7 +19,14 @@ const images = {
   chevronRight: require('../Images/Icons/chevron-right.png'),
   hamburger: require('../Images/Icons/hamburger.png'),
   backButton: require('../Images/Icons/back-button.png'),
-  closeButton: require('../Images/Icons/close-button.png')
+  closeButton: require('../Images/Icons/close-button.png'),
+  
+  cover: require('../Images/gsls.jpg'),
+  playerPlayBtn: require('../Images/Icons/play.png'),
+  playerPauseBtn: require('../Images/Icons/pause.png'),
+  playerNextBtn: require('../Images/Icons/next.png'),
+  playerPrevBtn: require('../Images/Icons/previous.png')
+
 }
 
 export default images

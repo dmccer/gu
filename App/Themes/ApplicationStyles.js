@@ -32,7 +32,7 @@ const ApplicationStyles = {
       paddingVertical: Metrics.doubleBaseMargin,
       color: Colors.snow,
       marginVertical: Metrics.smallMargin,
-      textAlign: 'center'
+      // textAlign: 'center'
     },
     subtitle: {
       color: Colors.snow,
