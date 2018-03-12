@@ -22,11 +22,6 @@ const images = {
   closeButton: require('../Images/Icons/close-button.png'),
   
   cover: require('../Images/gsls.jpg'),
-  playerPlayBtn: require('../Images/Icons/play.png'),
-  playerPauseBtn: require('../Images/Icons/pause.png'),
-  playerNextBtn: require('../Images/Icons/next.png'),
-  playerPrevBtn: require('../Images/Icons/previous.png')
-
 }
 
 export default images

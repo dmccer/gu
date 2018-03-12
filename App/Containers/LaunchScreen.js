@@ -4,7 +4,9 @@ import {
   TouchableOpacity
 } from 'react-native'
 import TrackPlayer from 'react-native-track-player';
-import { Images } from '../Themes'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import { Images, Metrics, Colors } from '../Themes'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
@@ -67,20 +69,36 @@ export default class LaunchScreen extends Component {
     await TrackPlayer.setupPlayer({
       maxCacheSize: 1024 * 5
     });
-    await TrackPlayer.add({
-      id: '00001',
-      // url: require('../Images/1225.mp3'),
-      url: 'http://10.187.72.108:8000/1225.mp3',
-      title: '测试',
-      artist: '无'
-    });
+    await TrackPlayer.add([
+      {
+        id: '00002',
+        url: 'http://10.187.72.108:8000/gqcx.m4a',
+        title: '古琴禅修',
+        artist: '无'
+      }, {
+        id: '00003',
+        url: 'http://10.187.72.108:8000/qxzc.m4a',
+        title: '古琴禅修',
+        artist: '无'
+      }, {
+        id: '00001',
+        // url: require('../Images/1225.mp3'),
+        url: 'http://10.187.72.108:8000/1225.mp3',
+        title: '测试',
+        artist: '无'
+      }
+    ]);
 
     TrackPlayer.play();
   }
 
-  playPrev = () => {}
+  playPrev = () => {
+    TrackPlayer.skipToPrevious();
+  }
 
-  playNext = () => {}
+  playNext = () => {
+    TrackPlayer.skipToNext();
+  }
 
   togglePlay = () => {
     const { state } = this.state;
@@ -94,46 +112,43 @@ export default class LaunchScreen extends Component {
 
   render () {
     const { msg, state } = this.state;
+    const content = `
+    窗前明月光，
+    疑是地上霜，
+    举头望明月，
+    低头思故乡
+    `;
 
     return (
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <ScrollView style={styles.container}>
-          <ImageBackground
-            style={styles.bg}
-            source={Images.cover}
-          >
-            <View style={[styles.centered, styles.article]}>
-              <Text style={styles.articleContent}>
-                This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
-              </Text>
-            </View>
-          </ImageBackground>
+        <ImageBackground
+          style={styles.page}
+          source={Images.cover}
+        >
           <View style={styles.player}>
+            <View style={[styles.centered, styles.article]}>
+              <Text style={styles.title}>静夜思</Text>
+              <Text style={styles.author}>李白</Text>
+              <Text style={styles.content}>{content}</Text>
+            </View>
             <View style={styles.controls}>
               <TouchableOpacity onPress={this.playPrev} style={styles.controlBtn}>
-                <Image
-                  source={Images.playerPrevBtn}
-                  style={styles.controlBtnImg}
-                />
+                <Icon name="skip-previous-circle-outline" size={40} color={Colors.frost} />
               </TouchableOpacity>
               <TouchableOpacity onPress={this.togglePlay} style={styles.controlBtn}>
-                <Image
-                  source={state === 'STATE_PLAYING' ? Images.playerPauseBtn : Images.playerPlayBtn}
-                  style={styles.controlBtnImg}
+                <Icon
+                  name={ state === 'STATE_PLAYING' ? 'pause-circle-outline' : 'play-circle-outline'}
+                  size={50}
+                  color={Colors.frost}
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={this.playNext} style={styles.controlBtn}>
-                <Image
-                  source={Images.playerNextBtn}
-                  style={styles.controlBtnImg}
-                />
+                <Icon name="skip-next-circle-outline" size={40} color={Colors.frost} />
               </TouchableOpacity>
             </View>
-            <Text>{state}</Text>
-            <Text style={styles.sectionText}>{msg}</Text>
           </View>
-        </ScrollView>
+        </ImageBackground>
       </View>
     )
   }
