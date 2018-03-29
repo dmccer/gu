@@ -31,35 +31,56 @@ export default StyleSheet.create({
     left: 0,
     width: Metrics.screenWidth,
     backgroundColor: Colors.windowTint,
+    borderTopWidth: 1,
+    borderTopColor: Colors.windowTint,
+  },
+  playerPanelToggler: {
+    position: 'absolute',
+    top: -50,
+    right: 5,
   },
   article: {
-    flex: 1,
+    // flex: 1,
+    position: 'absolute',
+    top: Metrics.screenHeight / 4,
+    left: 10,
+    flexDirection: 'row',
     paddingHorizontal: Metrics.doubleBaseMargin,
-    paddingTop: Metrics.doubleBaseMargin,
-    // backgroundColor: Colors.bloodOrange
+    paddingTop: 4 * Metrics.doubleBaseMargin,
+    // backgroundColor: Colors.windowTint
   },
   title: {
+    fontFamily: 'LiXuKe',
     fontSize: 22,
-    color: Colors.snow,
+    color: Colors.black,
     fontWeight: 'bold',
     lineHeight: 18 * 1.5
   },
   author: {
-    fontSize: 14,
-    color: Colors.ricePaper,
+    fontFamily: 'LiXuKe',
+    fontSize: 16,
+    color: Colors.black,
     fontStyle: 'italic',
-    lineHeight: 14 * 1.5
+    lineHeight: 12 * 1.5,
   },
   content: {
-    fontSize: 18,
-    color: Colors.snow,
-    lineHeight: 16 * 2,
+    fontFamily: 'LiXuKe',
+    fontSize: 20,
+    lineHeight: 16 * 1.5,
+    color: Colors.black,
+    textAlignVertical: 'top',
+    fontWeight: '900'
+    // backgroundColor: Colors.paper,
   },
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingHorizontal: Metrics.screenWidth * 0.15,
-    paddingBottom: Metrics.baseMargin
+    // paddingBottom: Metrics.baseMargin
+  },
+  text: {
+    width: 20,
+    height: 300
   }
 })

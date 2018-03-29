@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>RNIgnite</string>
 	<key>CFBundleExecutable</key>
@@ -63,6 +63,11 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>QXyingbixing.ttf</string>
+		<string>CaiYunHanMaoBi-Xing.ttf</string>
+		<string>HanWangShinSuMedium.ttf</string>
+		<string>HanWangWCL07.ttf</string>
+		<string>LiXuKe.ttf</string>
 	</array>
 </dict>
 </plist>
